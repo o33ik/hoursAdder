@@ -1,0 +1,25 @@
+<template name="hoursAdder">
+	<button id="addInput">+</button>
+	{{#if removeInputActiveIsActive}}
+		<button id="removeInput">-</button>
+	{{else}}
+		<button id="removeInput" disabled>-</button>
+	{{/if}}
+
+	{{#each countOfTimeInputs}}
+		{{> timeInput}}
+	{{/each}}
+
+	<button id="count">Count</button>
+
+	{{#if totalTime}}
+		<p>Total time: {{totalTime}}</p>
+	{{/if}}
+</template>
+
+<template name="timeInput">
+	<div class="timeInput">
+		<label for="hours">Hours</label><input id="hours" type="number" min="0">
+		<label for="mins">Mins</label><input id="mins" type="number" min ="0" max="59">
+	</div>
+</template>
